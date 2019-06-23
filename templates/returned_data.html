@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<meta http-equiv="refresh" content="10">
+
+<div class="time_updated">Last updated: {{ last_updated }}</div>
+
+<table>
+    <thead><tr><th>Sites:</th><th>Status:</th></tr></thead>
+    <tbody>
+        {% for url in returned_data %}
+            <tr>
+                {% if returned_data.get(url) == "200" %}
+                    <p class="good-url"><td>{{ url }}</td><td><font color="green">{{ returned_data.get(url) }}</font></td></p>
+                {% else %}
+                    <p class="bad-url"><td>{{ url }}</td><td><font color="red">{{ returned_data.get(url) }}</font></td></p>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<table>
+    <thead><tr><th>Content:</th><th>Found:</th></tr></thead>
+    <tbody>
+        {% for content in returned_content %}
+            <tr>
+                {% if returned_content.get(content) %}
+                    <p class="good-url"><td>{{ content }}</td><td><font color="green">{{ returned_content.get(content) }}</font></td></p>
+                {% else %}
+                    <p class="bad-url"><td>{{ content }}</td><td><font color="red">{{ returned_content.get(content) }}</font></td></p>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

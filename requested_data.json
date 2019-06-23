@@ -1,0 +1,15 @@
+{
+    "sites": [
+      "https://www.google.com/",
+      "https://www.youtube.com/",
+      "https://liquipedia.net/",
+      "https://asdasfffaf.net/"
+    ],
+
+    "content_requested": [
+      "Szukaj w Google",
+      "Na czabsie",
+      "StarCraft II"
+    ]
+
+}
